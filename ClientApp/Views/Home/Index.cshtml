@@ -1,0 +1,50 @@
+﻿@using ClientApp.Models
+
+<h3>Cities and Locations</h3>
+<table class="table table table-bordered">
+
+    <tr>
+        <th>Id</th>
+        <th>City</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th></th>
+    </tr>
+
+    @foreach (City city in Model)
+    {
+        <tr>
+            <td>@city.Id</td>
+            <td>@city.CityName</td>
+            <td>@city.Latitude</td>
+            <td>@city.Longitude</td>
+            <td>
+                <div class="d-flex">
+                    <form id="@($"form-sunrise{city.Id}")" action="@Url.Action("EventInfo")" method="get">
+                        <input type="hidden" name="cityId" value="@city.Id" />
+                        <input type="hidden" name="eventtime" value="@EventTime.Sunrise" />
+                        <button class="btn btn-outline-dark btn-sm me-2" type="submit"><i data-feather="sunrise"></i></button>
+                    </form>
+                    <form id="@($"form-sunset{city.Id}")" action="@Url.Action("EventInfo")" method="get">
+                        <input type="hidden" name="cityId" value="@city.Id" />
+                        <input type="hidden" name="eventtime" value="@EventTime.Sunset" />
+                        <button class="btn btn-outline-dark btn-sm me-2" type="submit"><i data-feather="sunset"></i></button>
+                    </form>
+                    <form id="@($"form-sunset{city.Id}")" action="@Url.Action("EventInfo")" method="get">
+                        <input type="hidden" name="cityId" value="@city.Id" />
+                        <input type="hidden" name="eventtime" value="@EventTime.SunriseAndSunset" />
+                        <button class="btn btn-outline-dark btn-sm me-2" type="submit"><i data-feather="sunset"></i><i data-feather="sunrise"></i></button>
+                    </form>
+                    <form id="@($"form-edit{city.Id}")" action="@Url.Action("EditCity")" method="get" class="">
+                        <input type="hidden" name="cityId" value="@city.Id" />
+                        <button class="btn btn-warning btn-sm me-2" type="submit">Edit</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+    }
+</table>
+
+<div class="text-center">
+    <a href="@Url.Action("EditCity")" class="btn btn-primary">Add City</a>
+</div>

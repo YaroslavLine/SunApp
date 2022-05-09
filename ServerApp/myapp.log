@@ -1,0 +1,12 @@
+2022-04-29 20:17:48,180 [9] INFO ServerApp.Controllers.SunrisesSunsetsController - Sent list
+2022-04-29 20:46:53,205 [10] ERROR ServerApp.Controllers.HomeController - Error at updating data from admin
+2022-04-29 20:47:51,947 [12] INFO ServerApp.Controllers.HomeController - City: Днепр2 has been deleted from admin
+2022-04-29 20:47:54,542 [14] INFO ServerApp.Controllers.HomeController - City: Днепр2 has been deleted from admin
+2022-04-29 23:47:19,637 [7] INFO ServerApp.Controllers.HomeController - City: Винница has been deleted from admin
+2022-04-29 23:49:06,865 [7] INFO ServerApp.Controllers.SunrisesSunsetsController - City has been updated
+2022-04-29 23:50:19,540 [8] INFO ServerApp.Controllers.SunrisesSunsetsController - City: London has been deleted
+2022-04-30 00:14:37,349 [15] INFO ServerApp.Controllers.HomeController - City: Кривой Рог has been deleted from admin
+2022-05-02 01:04:30,203 [10] ERROR ServerApp.Controllers.Api.EventCityController - Error at getting city events
+2022-05-02 01:43:48,010 [9] ERROR ServerApp.Controllers.HomeController - Error at updating data from admin
+2022-05-02 01:44:05,479 [9] ERROR ServerApp.Controllers.HomeController - Error at updating data from admin
+2022-05-02 01:44:13,921 [12] INFO ServerApp.Controllers.HomeController - City: Киев has been deleted from admin

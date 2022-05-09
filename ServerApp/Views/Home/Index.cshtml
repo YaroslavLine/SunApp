@@ -1,0 +1,38 @@
+﻿@using ServerApp.Models
+<h3>Cities and Locations</h3>
+<table class="table table table-bordered">
+
+    <tr>
+        <th>Id</th>
+        <th>City</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th></th>
+    </tr>
+
+    @foreach (City city in Model)
+    {
+        <tr>
+            <td>@city.Id</td>
+            <td>@city.Name</td>
+            <td>@city.Latitude</td>
+            <td>@city.Longitude</td>
+            <td>
+                <div style="display:flex" class="flex">
+                    <form id="@($"form-edit{city.Id}")" action="@Url.Action("EditCity")" method="get" >
+                        <input type="hidden" name="cityId" value="@city.Id" />
+                        <button class="btn btn-warning btn-sm" type="submit">Edit</button>
+                    </form>
+                    <form id="@($"form-delete{city.Id}")" action="@Url.Action("DeleteCity")" method="post">
+                        <input type="hidden" name="cityId" value="@city.Id" />
+                        <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+    }
+</table>
+
+<div class="text-center">
+    <a href="@Url.Action("EditCity")" class="btn btn-primary">Add City</a>
+</div>

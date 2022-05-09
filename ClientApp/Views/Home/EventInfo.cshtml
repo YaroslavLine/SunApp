@@ -1,0 +1,42 @@
+﻿@model ClientApp.Models.ApiResponseCityModel
+@using ClientApp.Models
+
+<div class="card m-5" style="width: 22rem;">
+    @if (ViewBag.Event == EventTime.SunriseAndSunset)
+    {
+        <div class="card-body">
+            <h5 class="card-title m-3">@Model.CityName</h5>
+            <div class=" d-flex m-3">
+                <i data-feather="sunrise" class="me-3"></i>
+                <span>@Model.Sunrise.GetValueOrDefault()</span>
+            </div>
+            <div class="d-flex m-3">
+                <i data-feather="sunset" class="me-3"></i>
+                <span>@Model.Sunset.GetValueOrDefault()</span>
+            </div>
+        </div>
+    }
+    @if (ViewBag.Event == EventTime.Sunrise)
+    {
+        <div class="card-body">
+            <h5 class="card-title m-3">@Model.CityName</h5>
+            <div class="card-title m-3">
+                <i data-feather="sunrise" class="me-3"></i>
+                <span>@Model.Sunrise.GetValueOrDefault()</span>
+            </div>
+        </div>
+    }
+    @if (ViewBag.Event == EventTime.Sunset)
+    {
+        <div class="card-body">
+            <h5 class="card-title m-3">@Model.CityName</h5>
+            <div class=" d-flex m-3">
+                <i data-feather="sunset" class="me-3"></i>
+                <span>@Model.Sunset.GetValueOrDefault()</span>
+            </div>
+        </div>
+    }
+</div>
+<div class="text-center">
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Back</a>
+</div>
